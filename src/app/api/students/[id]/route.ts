@@ -111,3 +111,35 @@ export async function PUT(
     return Response.json({ error });
   }
 }
+
+export async function DELETE(
+  request: Request,
+  { params }: { params: Promise<{ id: string }> }
+) {
+  const id = (await params).id;
+
+  const doc = new GoogleSpreadsheet(
+    '1QPi8_YOSghYt0i-nhDOIfq9DZvBgcQqEe-tioetSZYg',
+    serviceAccountAuthPut
+  );
+
+  await doc.loadInfo();
+
+  try {
+    const sheet = doc.sheetsByIndex[0];
+    const data = await sheet.getRows();
+
+    const foundRow = data.find((row) => row.get('id') === id.toString());
+
+    if (foundRow) {
+      await foundRow.delete();
+    } else {
+      return Response.json({ error: 'Student not found' }, { status: 404 });
+    }
+
+    return Response.json({ message: 'Student deleted successfully' });
+  } catch (error) {
+    console.error(error);
+    return Response.json({ error });
+  }
+}
