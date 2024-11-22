@@ -1,0 +1,23 @@
+export type Student = {
+  id: string;
+  name: string;
+  birthDate: string;
+  gender: string;
+  maritalStatus: string;
+  profession: string;
+  cpf: string;
+  rg: string;
+  issuingAgency: string;
+  postalCode: string;
+  neighborhood: string;
+  address: string;
+  number: string;
+  complement: string;
+  city: string;
+  state: string;
+  placeOfBirth: string;
+  nationality: string;
+  phone: [string, string];
+  email: [string, string];
+  instagram: [string, string];
+};
