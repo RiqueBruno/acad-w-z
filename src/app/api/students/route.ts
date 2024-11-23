@@ -25,7 +25,7 @@ export async function GET() {
   await doc.loadInfo();
 
   try {
-    const sheet = doc.sheetsByIndex[0];
+    const sheet = doc.sheetsByTitle['bd-alunos'];
     const data = await sheet.getRows();
 
     const rows: Student[] = data.map((row) => {
