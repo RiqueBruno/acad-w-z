@@ -9,7 +9,7 @@ export default function Header() {
   const navNames = ['Home', 'Sobre', 'Cursos', 'Serviços', 'Contato'];
 
   return (
-    <header className="bg-white shadow-md z-[99] fixed w-full">
+    <header className="bg-colors-brand-primary shadow-md z-[99] fixed w-full">
       <div className="container mx-auto flex justify-between items-center py-4 px-6">
         <Link href="/">
           <Image
@@ -54,7 +54,7 @@ export default function Header() {
         <nav
           className={`${
             isMenuOpen
-              ? 'absolute top-16 right-6 bg-white w-48 rounded-md shadow-md transition-all duration-300'
+              ? 'absolute top-16 right-6 bg-colors-brand-primary w-48 rounded-md shadow-md transition-all duration-300'
               : 'hidden md:block'
           } md:space-x-6 md:flex md:flex-row md:items-center md:justify-end`}
         >
@@ -64,7 +64,7 @@ export default function Header() {
                 key={name}
                 text={name}
                 url={name === 'Home' ? '/' : `/${name.toLowerCase()}`}
-                cssLink="block px-4 py-2 text-gray-800 hover:bg-gray-200 md:hover:text-gray-500 md:text-gray-800"
+                cssLink="block px-4 py-2 text-colors-brand-secondary hover:bg-colors-brand-tertiary hover:text-colors-brand-primary transition rounded-md"
                 cssLi=""
               />
             ))}
