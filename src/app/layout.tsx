@@ -29,8 +29,12 @@ export default function RootLayout({
   return (
     <html lang="pt">
       <body
+        aria-labelledby="body-title"
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <h2 id="body-title" className="sr-only">
+          Site Academia Waleska Zanyor
+        </h2>
         <Header />
         {children}
       </body>
