@@ -18,15 +18,17 @@ type CarouselComponentProps = {
 };
 
 const layoutOne = (item: CarouselItem) => (
-  <>
+  <article>
     <div className="relative w-full h-[600px]">
       <Image src={item.image} alt={item.title} fill className="object-cover" />
     </div>
     <div className="absolute inset-0 bg-gradient-to-t from-colors-brand-primary/40 to-transparent">
       <div className="absolute bottom-0 p-8 text-gray-900">
-        <h2 className="text-4xl font-bold mb-4 bg-white/50 pl-2 rounded-sm">
-          {item.title}
-        </h2>
+        <header>
+          <h2 className="text-4xl font-bold mb-4 bg-white/50 pl-2 rounded-sm">
+            {item.title}
+          </h2>
+        </header>
         <p className="text-xl mb-6 bg-white/50 px-2 rounded-sm">
           {item.subtext}
         </p>
@@ -35,17 +37,19 @@ const layoutOne = (item: CarouselItem) => (
         </button>
       </div>
     </div>
-  </>
+  </article>
 );
 
 const layoutTwo = (item: CarouselItem) => (
-  <>
+  <article>
     <div className="relative w-[64%] h-[600px]">
       <Image src={item.image} alt={item.title} fill className="object-cover" />
     </div>
     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent h-full overflow-hidden">
       <div className="absolute top-0 right-0 p-8 text-gray-700 h-full space-y-24 flex flex-col justify-center items-center w-[40%]">
-        <h2 className="text-4xl font-bold mb-4 z-20">{item.title}</h2>
+        <header>
+          <h2 className="text-4xl font-bold mb-4 z-20">{item.title}</h2>
+        </header>
         <p className="text-xl mb-6 w-[70%] z-20">{item.subtext}</p>
         <button className="px-6 py-3 bg-colors-brand-tertiary text-colors-brand-primary rounded-full hover:bg-opacity-90 transition z-20">
           {item.buttonText}
@@ -55,16 +59,18 @@ const layoutTwo = (item: CarouselItem) => (
         </div>
       </div>
     </div>
-  </>
+  </article>
 );
 
 const layoutThree = (item: CarouselItem) => (
-  <>
+  <article>
     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent h-full overflow-hidden">
       <div className="absolute top-0 left-0 p-8 text-gray-700 h-full space-y-24 flex flex-col justify-center items-center w-[40%]">
-        <h2 className="text-4xl font-bold mb-4 z-20 w-[90%] text-center">
-          {item.title}
-        </h2>
+        <header>
+          <h2 className="text-4xl font-bold mb-4 z-20 w-[90%] text-center">
+            {item.title}
+          </h2>
+        </header>
         <p className="text-xl mb-6 w-[60%] text-center z-20">{item.subtext}</p>
         <button className="px-6 py-3 bg-colors-brand-tertiary text-colors-brand-primary rounded-full hover:bg-opacity-90 transition z-20">
           {item.buttonText}
@@ -77,7 +83,7 @@ const layoutThree = (item: CarouselItem) => (
     <div className="relative w-[64%] h-[600px] ml-auto">
       <Image src={item.image} alt={item.title} fill className="object-cover" />
     </div>
-  </>
+  </article>
 );
 
 export default function CarouselComponent({
@@ -109,7 +115,7 @@ export default function CarouselComponent({
   };
 
   return (
-    <div
+    <section
       className="relative w-full max-w-6xl mx-auto overflow-hidden rounded-xl shadow-2xl"
       ref={carouselRef}
       tabIndex={0}
@@ -117,17 +123,27 @@ export default function CarouselComponent({
       onMouseEnter={() => setAutoplayPaused(true)}
       onMouseLeave={() => setAutoplayPaused(false)}
       role="region"
-      aria-label="Image Carousel"
+      aria-label="Destaques: cursos, ações sociais e promoções"
+      aria-labelledby="carousel-title"
+      aria-live="polite"
     >
+      <h2 id="carousel-title" className="sr-only">
+        Destaques: cursos, ações sociais e promoções
+      </h2>
       <div
         className="flex transition-transform duration-500"
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+        aria-label="Destaques: cursos, ações sociais e promoções"
       >
         {carouselItems.map((item, index) => (
           <div
             key={index}
             className="relative w-full flex-shrink-0"
             aria-hidden={currentIndex !== index}
+            aria-roledescription="slide"
+            aria-label={`Slide ${index + 1} de ${carouselItems.length}: ${
+              item.title
+            }`}
           >
             {item.layout === 1
               ? layoutOne(item)
@@ -141,14 +157,14 @@ export default function CarouselComponent({
       <button
         onClick={handlePrev}
         className="absolute left-4 top-1/2 transform -translate-y-1/2 p-3 rounded-full bg-colors-brand-tertiary/90 hover:bg-colors-brand-tertiary/80 z-30"
-        aria-label="Previous slide"
+        aria-label="slide anterior"
       >
         <FiChevronLeft className="w-6 h-6 text-colors-brand-primary" />
       </button>
       <button
         onClick={handleNext}
         className="absolute right-4 top-1/2 transform -translate-y-1/2 p-3 rounded-full bg-colors-brand-tertiary/90 hover:bg-colors-brand-tertiary/80 z-30"
-        aria-label="Next slide"
+        aria-label="Próximo slide"
       >
         <FiChevronRight className="w-6 h-6 text-colors-brand-primary" />
       </button>
@@ -168,6 +184,6 @@ export default function CarouselComponent({
           />
         ))}
       </div>
-    </div>
+    </section>
   );
 }
