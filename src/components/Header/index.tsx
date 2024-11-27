@@ -57,7 +57,11 @@ export default function Header() {
               ? 'absolute top-16 right-6 bg-colors-brand-primary w-48 rounded-md shadow-md transition-all duration-300'
               : 'hidden md:block'
           } md:space-x-6 md:flex md:flex-row md:items-center md:justify-end`}
+          aria-labelledby="menu-title"
         >
+          <h2 id="menu-title" className="sr-only">
+            Menu de navegação
+          </h2>
           <ul className="py-2 md:py-0 md:flex md:items-center md:justify-center">
             {navNames.map((name) => (
               <NavItem
