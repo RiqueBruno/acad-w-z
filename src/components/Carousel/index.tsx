@@ -24,11 +24,9 @@ const layoutOne = (item: CarouselItem) => (
     </div>
     <div className="absolute inset-0 bg-gradient-to-t from-colors-brand-primary/40 to-transparent">
       <div className="absolute bottom-0 p-8 text-gray-900">
-        <header>
-          <h2 className="text-4xl font-bold mb-4 bg-white/50 pl-2 rounded-sm">
-            {item.title}
-          </h2>
-        </header>
+        <h2 className="text-4xl font-bold mb-4 bg-white/50 pl-2 rounded-sm">
+          {item.title}
+        </h2>
         <p className="text-xl mb-6 bg-white/50 px-2 rounded-sm">
           {item.subtext}
         </p>
@@ -47,9 +45,7 @@ const layoutTwo = (item: CarouselItem) => (
     </div>
     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent h-full overflow-hidden">
       <div className="absolute top-0 right-0 p-8 text-gray-700 h-full space-y-24 flex flex-col justify-center items-center w-[40%]">
-        <header>
-          <h2 className="text-4xl font-bold mb-4 z-20">{item.title}</h2>
-        </header>
+        <h2 className="text-4xl font-bold mb-4 z-20">{item.title}</h2>
         <p className="text-xl mb-6 w-[70%] z-20">{item.subtext}</p>
         <button className="px-6 py-3 bg-colors-brand-tertiary text-colors-brand-primary rounded-full hover:bg-opacity-90 transition z-20">
           {item.buttonText}
@@ -66,11 +62,9 @@ const layoutThree = (item: CarouselItem) => (
   <article>
     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent h-full overflow-hidden">
       <div className="absolute top-0 left-0 p-8 text-gray-700 h-full space-y-24 flex flex-col justify-center items-center w-[40%]">
-        <header>
-          <h2 className="text-4xl font-bold mb-4 z-20 w-[90%] text-center">
-            {item.title}
-          </h2>
-        </header>
+        <h2 className="text-4xl font-bold mb-4 z-20 w-[90%] text-center">
+          {item.title}
+        </h2>
         <p className="text-xl mb-6 w-[60%] text-center z-20">{item.subtext}</p>
         <button className="px-6 py-3 bg-colors-brand-tertiary text-colors-brand-primary rounded-full hover:bg-opacity-90 transition z-20">
           {item.buttonText}
