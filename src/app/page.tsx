@@ -1,5 +1,6 @@
 'use client';
 
+import About from '@/components/About';
 import CarouselComponent from '@/components/Carousel';
 import carouselData from '@/components/Carousel/data';
 
@@ -10,6 +11,7 @@ export default function Home() {
         Pagina principal do site Academia Waleska Zanyor
       </h2>
       <CarouselComponent carouselItems={carouselData} />
+      <About />
     </main>
   );
 }
