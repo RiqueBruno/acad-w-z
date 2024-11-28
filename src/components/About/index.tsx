@@ -1,25 +1,33 @@
+import aboutInfos from './data';
+
 export default function About() {
   return (
-    <section className="bg-custom-bg bg-cover bg-center h-screen flex items-center justify-center">
-      <div className="h-[70%] w-[70%] bg-colors-brand-primary/80 rounded-md flex items-center justify-center">
-        <div className="w-[50%] h-full flex items-center justify-center">
-          <div className="w-80 h-80">
-            <img
-              src="/BG.png"
-              alt="Academia Waleska Zanyor"
-              className="w-full h-full rounded-lg"
-            />
-          </div>
+    <section className="bg-custom-bg bg-cover bg-center h-screen flex items-center justify-center px-8 md:px-8 lg:px-16">
+      <div className="h-auto max-w-[1200px] w-full bg-white/80 shadow-xl rounded-lg flex flex-col md:flex-row items-center overflow-hidden">
+        <div className="w-full md:w-[50%] h-[300px] md:h-[400px] flex items-center justify-center p-4 md:p-6">
+          <img
+            src={aboutInfos.image}
+            alt={aboutInfos.title}
+            className="w-full h-full object-cover rounded-lg"
+          />
         </div>
-        <header className="w-[50%] h-full flex justify-center items-center flex-col">
-          <h2 className="text-4xl font-bold mb-4 w-[70%]">Sobre a academia</h2>
-          <p className="text-xl mb-6 w-[70%]">
-            A Academia Waleska Zanyor é um espaço voltado para a prática de
-            atividades físicas e bem-estar. Com uma equipe de profissionais
-            qualificados, oferecemos uma variedade de modalidades para atender a
-            todos os públicos. Venha nos conhecer e faça uma aula experimental!
-          </p>
-        </header>
+
+        <div className="w-full md:w-[50%] h-auto flex flex-col justify-center items-center p-8 md:p-10">
+          <header className="text-center md:text-left">
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-800 mb-4">
+              {aboutInfos.title}
+            </h2>
+            <p className="text-lg lg:text-xl text-gray-600 leading-relaxed">
+              {aboutInfos.text.slice(0, 350)}
+            </p>
+          </header>
+          <a
+            href="/sobre"
+            className="p-4 bg-colors-brand-tertiary text-colors-brand-primary rounded-md hover:bg-colors-brand-tertiary/90 mt-4"
+          >
+            {aboutInfos.button}
+          </a>
+        </div>
       </div>
     </section>
   );
