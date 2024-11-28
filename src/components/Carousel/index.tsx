@@ -24,7 +24,7 @@ const layoutOne = (item: CarouselItem) => (
     </div>
     <div className="absolute inset-0 bg-gradient-to-t from-colors-brand-primary/40 to-transparent">
       <div className="absolute bottom-0 p-8 text-gray-900">
-        <h2 className="text-4xl font-bold mb-4 bg-white/50 pl-2 rounded-sm">
+        <h2 className="text-3xl lg:text-4xl font-bold mb-4 bg-white/50 pl-2 rounded-sm">
           {item.title}
         </h2>
         <p className="text-xl mb-6 bg-white/50 px-2 rounded-sm">
@@ -39,18 +39,27 @@ const layoutOne = (item: CarouselItem) => (
 );
 
 const layoutTwo = (item: CarouselItem) => (
-  <article>
-    <div className="relative w-[64%] h-[600px]">
-      <Image src={item.image} alt={item.title} fill className="object-cover" />
+  <article className="flex flex-col">
+    <div className="relative w-full md:w-[64%] h-[440px] md:h-[600px] z-0">
+      <Image
+        src={item.image}
+        alt={item.title}
+        fill
+        className="object-cover z-0"
+      />
     </div>
-    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent h-full overflow-hidden">
-      <div className="absolute top-0 right-0 p-8 text-gray-700 h-full space-y-24 flex flex-col justify-center items-center w-[40%]">
-        <h2 className="text-4xl font-bold mb-4 z-20">{item.title}</h2>
-        <p className="text-xl mb-6 w-[70%] z-20">{item.subtext}</p>
+    <div className="md:hidden absolute bottom-0 left-0 bg-colors-brand-primary w-full h-60 z-10"></div>
+
+    <div className="absolute bottom-[-28%] left-0 md:inset-0 lg:bg-gradient-to-t lg:from-black/60 lg:to-transparent w-full h-full overflow-hidden">
+      <div className="absolute md:top-0 right-0 p-8 text-gray-700 h-full md:space-y-24 flex flex-col justify-center items-center w-full md:w-[40%]">
+        <h2 className="text-3xl font-bold mb-2 md:mb-4 z-20">{item.title}</h2>
+        <p className="text-xl mb-4 text-center lg:mb-6 w-[70%] max-h-20 z-20">
+          {item.subtext}
+        </p>
         <button className="px-6 py-3 bg-colors-brand-tertiary text-colors-brand-primary rounded-full hover:bg-opacity-90 transition z-20">
           {item.buttonText}
         </button>
-        <div className="absolute h-[50rem] w-[80rem] right-[-120%] z-0">
+        <div className="absolute h-[50rem] w-[80rem] right-[-120%] z-0 hidden lg:block">
           <Image src={waves} alt="Waves" layout="fill" objectFit="cover" />
         </div>
       </div>
@@ -59,22 +68,30 @@ const layoutTwo = (item: CarouselItem) => (
 );
 
 const layoutThree = (item: CarouselItem) => (
-  <article>
-    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent h-full overflow-hidden">
-      <div className="absolute top-0 left-0 p-8 text-gray-700 h-full space-y-24 flex flex-col justify-center items-center w-[40%]">
-        <h2 className="text-4xl font-bold mb-4 z-20 w-[90%] text-center">
+  <article className="w-full h-full relative">
+    <div className="absolute inset-0 h-full bg-gradient-to-t lg:bg-none from-colors-brand-tertiary/60 to-transparent overflow-hidden z-20 md:w-[40%]">
+      <div className="absolute p-8 text-gray-700 left-0 bottom-28 md:inset-0 md:space-y-24 md:bg-colors-brand-primary flex flex-col justify-center items-center h-16 md:h-full w-full">
+        <h2 className="text-3xl md:text-4xl font-bold mb-4 z-20 w-[90%] text-center">
           {item.title}
         </h2>
-        <p className="text-xl mb-6 w-[60%] text-center z-20">{item.subtext}</p>
+        <p className="text-xl mb-6 w-[90%] md:w-[60%] text-center z-20">
+          {item.subtext}
+        </p>
         <button className="px-6 py-3 bg-colors-brand-tertiary text-colors-brand-primary rounded-full hover:bg-opacity-90 transition z-20">
           {item.buttonText}
         </button>
-        <div className="absolute h-[50rem] w-[80rem] left-[-100%] z-0">
-          <Image src={waves} alt="Waves" layout="fill" objectFit="cover" />
+        <div className="absolute h-40 bottom-0 left-0 w-full md:h-[50rem] md:w-[80rem] md:top-0 md:left-[-100%] z-0 md:hidden">
+          <Image
+            src={waves}
+            alt="Waves"
+            layout="fill"
+            objectFit="cover"
+            className="hidden md:block"
+          />
         </div>
       </div>
     </div>
-    <div className="relative w-[64%] h-[600px] ml-auto">
+    <div className="relative w-full md:w-[64%] h-[600px] ml-auto z-0">
       <Image src={item.image} alt={item.title} fill className="object-cover" />
     </div>
   </article>
@@ -110,7 +127,7 @@ export default function CarouselComponent({
 
   return (
     <section
-      className="relative w-full max-w-6xl mx-auto overflow-hidden rounded-xl shadow-2xl"
+      className="relative w-full max-w-6xl mx-auto overflow-hidden rounded-xl shadow-2xl mb-32"
       ref={carouselRef}
       tabIndex={0}
       onKeyDown={handleKeyDown}
