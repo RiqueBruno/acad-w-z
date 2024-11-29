@@ -1,8 +1,8 @@
 export default function CoursesAd() {
   return (
-    <section className="bg-60 text-30 p-6 md:p-10 flex flex-col lg:flex-row items-center lg:justify-between rounded-lg shadow-lg max-w-5xl mx-auto text-gray-800 pt-24 mt-8">
+    <section className="bg-60 text-30 p-6 md:p-10 flex flex-col lg:flex-row items-center lg:justify-between rounded-lg shadow-lg max-w-5xl mx-auto text-gray-800 pt-24 lg:mt-8">
       <div className="lg:w-1/2 mb-6 lg:mb-0 w-[70%] flex flex-col items-center lg:items-start justify-center">
-        <h2 className="text-2xl md:text-4xl font-bold mb-4 text-center lg:text-start">
+        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center lg:text-start">
           Explore Nossos Cursos Exclusivos
         </h2>
         <p className="text-base md:text-lg mb-6 text-center lg:text-start">

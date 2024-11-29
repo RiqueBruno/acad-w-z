@@ -37,7 +37,7 @@ export default function CoursesCarousel({ courses }: CoursesCarouselProps) {
 
   return (
     <section className="bg-60 text-30 py-12 px-6 md:px-12 lg:px-20 text-gray-800 mt-8">
-      <h2 className="text-2xl md:text-4xl font-bold text-center mb-8">
+      <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">
         Nossos Cursos
       </h2>
       <div className="relative">
