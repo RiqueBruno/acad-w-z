@@ -7,9 +7,9 @@ export type ServiceCardProps = {
 
 export default function ServiceCard({ icon, title }: ServiceCardProps) {
   return (
-    <article>
+    <article className="bg-colors-brand-primary p-4 h-40 w-40 rounded-lg grid grid-rows-2 items-center justify-center text-4xl">
       {icon}
-      <h3>{title}</h3>
+      <h3 className="w-full text-center text-base">{title}</h3>
     </article>
   );
 }
