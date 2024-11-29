@@ -4,6 +4,8 @@ import About from '@/components/About';
 import CarouselComponent from '@/components/Carousel';
 import carouselData from '@/components/Carousel/data';
 import CoursesAd from '@/components/CoursesAd';
+import CoursesCarousel from '@/components/CoursesCarousel';
+import courses from '@/components/CoursesCarousel/data';
 import Ghost from '@/components/Ghost';
 import ServiceList from '@/components/ServiceList';
 import services from '@/components/ServiceList/data';
@@ -19,6 +21,7 @@ export default function Home() {
       <About />
       <ServiceList services={services} />
       <CoursesAd />
+      <CoursesCarousel courses={courses} />
     </main>
   );
 }
