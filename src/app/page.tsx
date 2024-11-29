@@ -1,6 +1,7 @@
 'use client';
 
 import About from '@/components/About';
+import BeModelAd from '@/components/BeModelAd';
 import CarouselComponent from '@/components/Carousel';
 import carouselData from '@/components/Carousel/data';
 import CoursesAd from '@/components/CoursesAd';
@@ -22,6 +23,7 @@ export default function Home() {
       <ServiceList services={services} />
       <CoursesAd />
       <CoursesCarousel courses={courses} />
+      <BeModelAd />
     </main>
   );
 }
