@@ -13,25 +13,25 @@ const services: Service[] = [
   {
     title: 'Cursos',
     icon: React.createElement(FaBookOpen, {
-      className: 'text-colors-brand-tertiary',
+      className: 'text-colors-brand-tertiary text-center w-full',
     }),
   },
   {
     title: 'Atendimentos para Modelos',
     icon: React.createElement(PiHairDryerFill, {
-      className: 'text-colors-brand-tertiary',
+      className: 'text-colors-brand-tertiary text-center w-full',
     }),
   },
   {
     title: 'Workshops',
     icon: React.createElement(HiLightBulb, {
-      className: 'text-colors-brand-tertiary',
+      className: 'text-colors-brand-tertiary text-center w-full',
     }),
   },
   {
     title: 'Ações Sociais',
     icon: React.createElement(FaHandHoldingHeart, {
-      className: 'text-colors-brand-tertiary',
+      className: 'text-colors-brand-tertiary text-center w-full',
     }),
   },
 ];
