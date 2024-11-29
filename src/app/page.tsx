@@ -4,6 +4,8 @@ import About from '@/components/About';
 import CarouselComponent from '@/components/Carousel';
 import carouselData from '@/components/Carousel/data';
 import Ghost from '@/components/Ghost';
+import ServiceList from '@/components/ServiceList';
+import services from '@/components/ServiceList/data';
 
 export default function Home() {
   return (
@@ -14,6 +16,7 @@ export default function Home() {
       <Ghost />
       <CarouselComponent carouselItems={carouselData} />
       <About />
+      <ServiceList services={services} />
     </main>
   );
 }
