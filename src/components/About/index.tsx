@@ -8,7 +8,7 @@ export default function About() {
           <img
             src={aboutInfos.image}
             alt={aboutInfos.title}
-            className="w-full h-full object-cover rounded-lg"
+            className="w-full h-full object-contain rounded-lg"
           />
         </div>
 
