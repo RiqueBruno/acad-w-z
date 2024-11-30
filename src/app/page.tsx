@@ -10,6 +10,8 @@ import courses from '@/components/CoursesCarousel/data';
 import Ghost from '@/components/Ghost';
 import ServiceList from '@/components/ServiceList';
 import services from '@/components/ServiceList/data';
+import SocialAction from '@/components/SocialAction';
+import socialData from '@/components/SocialAction/data';
 
 export default function Home() {
   return (
@@ -24,6 +26,7 @@ export default function Home() {
       <CoursesAd />
       <CoursesCarousel courses={courses} />
       <BeModelAd />
+      <SocialAction arr={socialData} />
     </main>
   );
 }
