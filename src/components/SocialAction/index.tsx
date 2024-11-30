@@ -12,7 +12,10 @@ export default function SocialAction({ arr }: SocialActionProps) {
         <h2 className="text-3xl lg:text-4xl text-center font-bold text-gray-800">
           Ações sociais
         </h2>
-        <CarouselComponent carouselItems={arr} type="social" />
+        <CarouselComponent
+          carouselItems={arr}
+          type="Ações sociais feitas pela Academia Waleska Zanyor"
+        />
         <Link
           href="/sobre"
           className="text-xl text-center text-colors-brand-primary bg-colors-brand-tertiary rounded-md p-4 mt-4"
