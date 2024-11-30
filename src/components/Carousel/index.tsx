@@ -16,7 +16,7 @@ export type CarouselItem = {
 
 type CarouselComponentProps = {
   carouselItems: CarouselItem[];
-  type?: 'default' | 'social';
+  type?: string;
 };
 
 const layoutOne = (item: CarouselItem) => (
@@ -166,21 +166,17 @@ export default function CarouselComponent({
       onMouseEnter={() => setAutoplayPaused(true)}
       onMouseLeave={() => setAutoplayPaused(false)}
       role="region"
-      aria-label="Destaques: cursos, ações sociais e promoções"
+      aria-label={`Destaques: ${type || 'cursos, ações sociais e promoções'}`}
       aria-labelledby="carousel-title"
       aria-live="polite"
     >
       <h2 id="carousel-title" className="sr-only">
-        {`Destaques: ${
-          type === 'default'
-            ? 'cursos, ações sociais e promoções'
-            : 'ações sociais'
-        }`}
+        {`Destaques: ${type || 'cursos, ações sociais e promoções'}`}
       </h2>
       <div
         className="flex transition-transform duration-500"
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-        aria-label="Destaques: cursos, ações sociais e promoções"
+        aria-label={`Destaques: ${type || 'cursos, ações sociais e promoções'}`}
       >
         {carouselItems.map((item, index) => (
           <div
