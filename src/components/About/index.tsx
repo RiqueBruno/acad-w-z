@@ -2,7 +2,7 @@ import aboutInfos from './data';
 
 export default function About() {
   return (
-    <section className="bg-custom-bg bg-cover bg-center h-screen flex items-center justify-center px-8 md:px-8 lg:px-16">
+    <section className="bg-custom-bg bg-cover bg-center min-h-screen w-full flex items-center justify-center px-8 md:px-8 lg:px-16">
       <div className="h-auto max-w-[1200px] w-full bg-white/80 shadow-xl rounded-lg flex flex-col md:flex-row items-center overflow-hidden">
         <div className="w-full md:w-[50%] h-[300px] md:h-[400px] flex items-center justify-center p-4 md:p-6">
           <img
