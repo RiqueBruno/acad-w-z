@@ -6,11 +6,12 @@ import waves from '../../../public/waves.png';
 
 export type CarouselItem = {
   image: string;
-  title: string;
-  subtext: string;
-  buttonText: string;
-  layout: 1 | 2 | 3;
-  link: string;
+  title?: string;
+  subtext?: string;
+  buttonText?: string;
+  layout: 1 | 2 | 3 | 4;
+  link?: string;
+  alt?: string;
 };
 
 type CarouselComponentProps = {
@@ -20,7 +21,12 @@ type CarouselComponentProps = {
 const layoutOne = (item: CarouselItem) => (
   <article>
     <div className="relative w-full h-[600px]">
-      <Image src={item.image} alt={item.title} fill className="object-cover" />
+      <Image
+        src={item.image}
+        alt={item.title || item.alt || 'Imagem'}
+        fill
+        className="object-cover"
+      />
     </div>
     <div className="absolute inset-0 bg-gradient-to-t from-colors-brand-primary/40 to-transparent">
       <div className="absolute bottom-0 p-8 text-gray-900">
@@ -43,7 +49,7 @@ const layoutTwo = (item: CarouselItem) => (
     <div className="relative w-full md:w-[64%] h-[440px] md:h-[600px] z-0">
       <Image
         src={item.image}
-        alt={item.title}
+        alt={item.title || item.alt || 'Imagem'}
         fill
         className="object-cover z-0"
       />
@@ -92,11 +98,35 @@ const layoutThree = (item: CarouselItem) => (
       </div>
     </div>
     <div className="relative w-full md:w-[64%] h-[600px] ml-auto z-0">
-      <Image src={item.image} alt={item.title} fill className="object-cover" />
+      <Image
+        src={item.image}
+        alt={item.title || item.alt || 'Imagem'}
+        fill
+        className="object-cover"
+      />
     </div>
   </article>
 );
 
+const layoutFour = (item: CarouselItem) => (
+  <article>
+    <div className="relative w-full h-[600px]">
+      <Image
+        src={item.image}
+        alt={item.title || item.alt || 'Imagem'}
+        fill
+        className="object-cover"
+      />
+    </div>
+    <div className="absolute inset-0 bg-gradient-to-t w-full from-colors-brand-primary/40 to-transparent">
+      <div className="absolute bottom-0 p-8 text-gray-900 w-full">
+        <h2 className="text-3xl lg:text-4xl font-bold mb-4 bg-white/50 pl-2 rounded-sm w-full text-center p-4">
+          {item.title}
+        </h2>
+      </div>
+    </div>
+  </article>
+);
 export default function CarouselComponent({
   carouselItems,
 }: CarouselComponentProps) {
@@ -156,11 +186,20 @@ export default function CarouselComponent({
               item.title
             }`}
           >
-            {item.layout === 1
-              ? layoutOne(item)
-              : item.layout === 2
-              ? layoutTwo(item)
-              : layoutThree(item)}
+            {(() => {
+              switch (item.layout) {
+                case 1:
+                  return layoutOne(item);
+                case 2:
+                  return layoutTwo(item);
+                case 3:
+                  return layoutThree(item);
+                case 4:
+                  return layoutFour(item);
+                default:
+                  return layoutOne(item);
+              }
+            })()}
           </div>
         ))}
       </div>
