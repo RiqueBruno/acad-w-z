@@ -16,6 +16,7 @@ export type CarouselItem = {
 
 type CarouselComponentProps = {
   carouselItems: CarouselItem[];
+  type?: 'default' | 'social';
 };
 
 const layoutOne = (item: CarouselItem) => (
@@ -129,6 +130,7 @@ const layoutFour = (item: CarouselItem) => (
 );
 export default function CarouselComponent({
   carouselItems,
+  type,
 }: CarouselComponentProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [autoplayPaused, setAutoplayPaused] = useState(false);
@@ -169,7 +171,11 @@ export default function CarouselComponent({
       aria-live="polite"
     >
       <h2 id="carousel-title" className="sr-only">
-        Destaques: cursos, ações sociais e promoções
+        {`Destaques: ${
+          type === 'default'
+            ? 'cursos, ações sociais e promoções'
+            : 'ações sociais'
+        }`}
       </h2>
       <div
         className="flex transition-transform duration-500"
