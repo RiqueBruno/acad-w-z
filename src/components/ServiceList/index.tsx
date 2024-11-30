@@ -7,7 +7,7 @@ export default function ServiceList({ services }: { services: Service[] }) {
       <h2 className="text-3xl lg:text-4xl font-bold w-full text-center text-colors-brand-primary">
         Lista de serviços que oferecemos:
       </h2>
-      <ul className="grid lg:grid-cols-4 grid-cols-2 gap-8 items-center justify-center">
+      <ul className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-4 gap-8 items-center justify-center">
         {services.map((service) => (
           <li
             key={service.title}
