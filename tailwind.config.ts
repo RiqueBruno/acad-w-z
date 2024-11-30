@@ -8,6 +8,9 @@ export default {
   ],
   theme: {
     extend: {
+      screens: {
+        xs: '370px',
+      },
       colors: {
         colors: {
           brand: {
