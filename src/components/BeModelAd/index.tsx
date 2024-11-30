@@ -13,7 +13,7 @@ export default function BeModelAd() {
         />
       </div>
 
-      <div className="flex flex-col justify-center items-center md:items-start w-full h-full px-6 md:w-1/2 md:px-12 lg:px-20 bg-[url('/sejamodelo.png')] bg-cover bg-center bg-no-repeat md:bg-none">
+      <div className="flex flex-col shadow-md justify-center items-center md:items-start w-full h-full px-6 md:w-1/2 md:px-12 lg:px-20 bg-[url('/sejamodelo.png')] bg-cover bg-center bg-no-repeat md:bg-none">
         <div className="bg-white bg-opacity-90 rounded-lg p-6 md:bg-transparent md:p-0 md:rounded-none">
           <h2 className="text-3xl md:text-4xl font-bold text-colors-black md:text-colors-white">
             Seja modelo
