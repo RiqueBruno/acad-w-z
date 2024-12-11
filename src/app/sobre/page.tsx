@@ -1,4 +1,5 @@
 import Ghost from '@/components/Ghost';
+import Image from 'next/image';
 
 export default function Sobre() {
   return (
