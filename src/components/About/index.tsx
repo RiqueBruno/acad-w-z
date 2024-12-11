@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import aboutInfos from './data';
 
 export default function About() {
@@ -21,12 +22,12 @@ export default function About() {
               {aboutInfos.text.slice(0, 350)}
             </p>
           </header>
-          <a
+          <Link
             href="/sobre"
             className="p-4 bg-colors-brand-tertiary text-colors-brand-primary rounded-md hover:bg-colors-brand-tertiary/90 mt-4"
           >
             {aboutInfos.button}
-          </a>
+          </Link>
         </div>
       </div>
     </section>
