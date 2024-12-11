@@ -36,8 +36,15 @@ export default function Sobre() {
         <p>Sobre</p>
       </section>
       <section>
-        <h2>Header</h2>
-        <p>Header</p>
+        <h2>Ações sociais</h2>
+        <p>
+          A Academia Waleska Zanyor também se preocupa com a comunidade. Por
+          isso, realizamos ações sociais regularmente. Acreditamos que a beleza
+          é para todos e que todos merecem se sentir bem consigo mesmos. Por
+          isso, oferecemos cortes de cabelo gratuitos para pessoas em situação
+          de rua ou organizações parceiras. Acreditamos que a beleza pode mudar
+          vidas e queremos ajudar a mudar a vida de quem mais precisa.
+        </p>
       </section>
     </main>
   );
