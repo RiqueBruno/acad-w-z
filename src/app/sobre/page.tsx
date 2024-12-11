@@ -34,7 +34,15 @@ export default function Sobre() {
       </section>
       <section>
         <h2>Waleska Zanyor</h2>
-        <p>Sobre</p>
+        <div>
+          <Image
+            src="/images/waleska-zanyor.jpg"
+            alt="Waleska Zanyor"
+            width={400}
+            height={400}
+          />
+          <p>Sobre</p>
+        </div>
       </section>
       <section>
         <h2>Ações sociais</h2>
