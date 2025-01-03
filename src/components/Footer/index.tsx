@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import React from 'react';
-import { FaFacebookF, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
+import { FaFacebookF, FaInstagram } from 'react-icons/fa';
 import { data } from './data';
 
 const Footer = () => {
@@ -64,11 +64,23 @@ const Footer = () => {
       </div>
 
       {/* Redes Sociais */}
-      <div className="bg-colors-brand-tertiary text-colors-brand-primary p-5 text-center">
+      <div className="bg-colors-brand-tertiary text-colors-brand-primary p-5 text-center md:flex justify-between items-center md:px-32">
+        <div className="mb-4 md:mb-0 w-full md:w-1/2 md:text-start">
+          <h2 className="font-bold">Feito por Bruno Henrique Cardoso - 2025</h2>
+        </div>
         <div className="flex justify-center space-x-4">
-          <FaFacebookF />
-          <FaInstagram />
-          <FaLinkedinIn />
+          <Link
+            href="https://www.facebook.com/AcademiaWZ"
+            className="text-2xl hover:text-colors-brand-secondary"
+          >
+            <FaFacebookF />
+          </Link>
+          <Link
+            href="https://www.instagram.com/academiawaleskazanyor/"
+            className="text-2xl hover:text-colors-brand-secondary"
+          >
+            <FaInstagram />
+          </Link>
         </div>
       </div>
     </footer>
