@@ -1,5 +1,7 @@
+import Link from 'next/link';
 import React from 'react';
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
+import { data } from './data';
 
 const Footer = () => {
   return (
@@ -18,10 +20,10 @@ const Footer = () => {
       </div>
 
       {/*Info & Links */}
-      <div className="bg-gray-50 text-gray-800 py-10 text-center lg:text-left px-8">
-        <div className="container mx-auto flex flex-wrap justify-center lg:justify-between items-center">
-          <div>
-            <h2>Informações</h2>
+      <div className="bg-gray-50 text-gray-800 py-10 text-center lg:text-left lg:px-24">
+        <div className="container mx-auto flex flex-wrap justify-center lg:justify-around items-center">
+          <div className="w-[80%] lg:w-[50%]">
+            <h2 className="font-bold">Informações</h2>
             <p>
               A Academia Waleska Zanyor funciona de segunda à quinta, das 9h às
               18h. As turmas são montadas de acordo com a necessidade e demanda
@@ -35,23 +37,28 @@ const Footer = () => {
               <li>Tel.: (21) 9 9753-1195 / (21) 9 9756-1195</li>
             </ul>
           </div>
-          <div className="flex flex-wrap justify-center gap-10 mt-10 lg:mt-0">
+          <div className="flex flex-wrap justify-center gap-10 mt-10 lg:mt-0 w-[80%] lg:w-[30%]">
             <div>
               <h3 className="font-bold">Compania</h3>
               <ul className="text-sm">
-                <li>Sobre Nós</li>
-                <li>Trabalhe Conosco</li>
-                <li>Torne-se um parceiro</li>
-                <li>Administrativo</li>
+                {data.map((item) => (
+                  <li
+                    key={item.title}
+                    className="hover:text-colors-brand-tertiary"
+                  >
+                    <Link href={item.link}>{item.title}</Link>
+                  </li>
+                ))}
               </ul>
             </div>
-            <div>
-              <h3 className="font-bold">Suporte</h3>
-              <ul className="text-sm">
-                <li>FAQ</li>
-                <li>Perguntas e Respostas</li>
-              </ul>
-            </div>
+          </div>
+          <div className="flex flex-wrap justify-center gap-10 mt-10 lg:mt-0 w-[80%] lg:w-[20%]">
+            <Link
+              href="/contato"
+              className="bg-colors-brand-tertiary text-white px-4 py-2 rounded-md hover:bg-colors-brand-secondary"
+            >
+              Administrativo
+            </Link>
           </div>
         </div>
       </div>
