@@ -3,6 +3,7 @@ import { useState, useEffect, useRef } from 'react';
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 import Image from 'next/image';
 import waves from '../../../public/waves.png';
+import Link from 'next/link';
 
 export type CarouselItem = {
   image: string;
@@ -37,9 +38,12 @@ const layoutOne = (item: CarouselItem) => (
         <p className="text-xl mb-6 bg-white/50 px-2 rounded-sm">
           {item.subtext}
         </p>
-        <button className="px-6 py-3 bg-colors-brand-tertiary text-colors-brand-primary rounded-full hover:bg-opacity-90 transition">
+        <Link
+          href={item.link ? `/${item.link}` : '/'}
+          className="px-6 py-3 bg-colors-brand-tertiary text-colors-brand-primary rounded-full hover:bg-opacity-90 transition"
+        >
           {item.buttonText}
-        </button>
+        </Link>
       </div>
     </div>
   </article>
@@ -63,9 +67,12 @@ const layoutTwo = (item: CarouselItem) => (
         <p className="text-xl mb-4 text-center lg:mb-6 w-[70%] max-h-20 z-20">
           {item.subtext}
         </p>
-        <button className="px-6 py-3 bg-colors-brand-tertiary text-colors-brand-primary rounded-full hover:bg-opacity-90 transition z-20">
+        <Link
+          href={item.link ? `/${item.link}` : '/'}
+          className="px-6 py-3 bg-colors-brand-tertiary text-colors-brand-primary rounded-full hover:bg-opacity-90 transition z-20"
+        >
           {item.buttonText}
-        </button>
+        </Link>
         <div className="absolute h-[50rem] w-[80rem] right-[-120%] z-0 hidden lg:block">
           <Image src={waves} alt="Waves" layout="fill" objectFit="cover" />
         </div>
@@ -84,9 +91,12 @@ const layoutThree = (item: CarouselItem) => (
         <p className="text-xl mb-6 w-[90%] md:w-[60%] text-center z-20">
           {item.subtext}
         </p>
-        <button className="px-6 py-3 bg-colors-brand-tertiary text-colors-brand-primary rounded-full hover:bg-opacity-90 transition z-20">
+        <Link
+          href={item.link ? `/${item.link}` : '/'}
+          className="px-6 py-3 bg-colors-brand-tertiary text-colors-brand-primary rounded-full hover:bg-opacity-90 transition z-20"
+        >
           {item.buttonText}
-        </button>
+        </Link>
         <div className="absolute h-40 bottom-0 left-0 w-full md:h-[50rem] md:w-[80rem] md:top-0 md:left-[-100%] z-0 md:hidden">
           <Image
             src={waves}

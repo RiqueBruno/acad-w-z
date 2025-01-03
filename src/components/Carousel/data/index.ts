@@ -7,7 +7,7 @@ const carouselData: CarouselItem[] = [
     subtext: 'Aprenda a cortar cabelos e a fazer penteados incríveis.',
     buttonText: 'Inscreva-se',
     layout: 3,
-    link: '',
+    link: 'sobre',
   },
   {
     image: '/acaoSocial.jpg',
@@ -16,7 +16,7 @@ const carouselData: CarouselItem[] = [
       'Ação social realizada na instituição Obra do Berço, localizada em Rio de Janeiro.',
     buttonText: 'Leia mais',
     layout: 1,
-    link: '',
+    link: 'sobre',
   },
   {
     image: '/acaoSocial.jpg',
@@ -24,7 +24,7 @@ const carouselData: CarouselItem[] = [
     subtext: 'Torne-se um modelo e torne seus desejos realidade.',
     buttonText: 'Ser Modelo',
     layout: 2,
-    link: '',
+    link: 'sobre',
   },
 ];
 
