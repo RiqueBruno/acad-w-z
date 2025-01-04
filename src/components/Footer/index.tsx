@@ -54,7 +54,7 @@ const Footer = () => {
           </div>
           <div className="flex flex-wrap justify-center gap-10 mt-10 lg:mt-0 w-[80%] lg:w-[20%]">
             <Link
-              href="/contato"
+              href="/login"
               className="bg-colors-brand-tertiary text-white px-4 py-2 rounded-md hover:bg-colors-brand-secondary"
             >
               Administrativo
