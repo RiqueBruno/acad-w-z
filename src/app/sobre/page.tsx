@@ -66,7 +66,7 @@ export default function Sobre() {
           <h3 className="text-2xl lg:text-3xl font-bold text-gray-800 mb-4">
             Fotos
           </h3>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-h-[64rem] p-2 overflow-y-auto rounded-lg">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-h-[40rem] p-2 overflow-y-auto rounded-lg">
             {imagesViewer.map((image, index) => (
               <ImageViewer key={index} src={image.src} alt={image.alt} />
             ))}

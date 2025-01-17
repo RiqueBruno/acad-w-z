@@ -24,4 +24,36 @@ export const imagesViewer: imageViewer[] = [
     src: '/images/acaoSocial/acaoSocial.jpg',
     alt: 'Ação social 5',
   },
+  {
+    src: '/images/acaoSocial/acaoSocial.jpg',
+    alt: 'Ação social 4',
+  },
+  {
+    src: '/images/acaoSocial/acaoSocial.jpg',
+    alt: 'Ação social 5',
+  },
+  {
+    src: '/images/acaoSocial/acaoSocial.jpg',
+    alt: 'Ação social 4',
+  },
+  {
+    src: '/images/acaoSocial/acaoSocial.jpg',
+    alt: 'Ação social 5',
+  },
+  {
+    src: '/images/acaoSocial/acaoSocial.jpg',
+    alt: 'Ação social 4',
+  },
+  {
+    src: '/images/acaoSocial/acaoSocial.jpg',
+    alt: 'Ação social 5',
+  },
+  {
+    src: '/images/acaoSocial/acaoSocial.jpg',
+    alt: 'Ação social 4',
+  },
+  {
+    src: '/images/acaoSocial/acaoSocial.jpg',
+    alt: 'Ação social 5',
+  },
 ];
