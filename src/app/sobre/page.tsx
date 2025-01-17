@@ -1,5 +1,7 @@
 import Ghost from '@/components/Ghost';
+import ImageViewer from '@/components/ImageView';
 import Image from 'next/image';
+import { imagesViewer } from './data';
 
 export default function Sobre() {
   return (
@@ -60,27 +62,14 @@ export default function Sobre() {
           de rua ou organizações parceiras. Acreditamos que a beleza pode mudar
           vidas e queremos ajudar a mudar a vida de quem mais precisa.
         </p>
-        <article className="flex flex-col items-center mt-8">
-          <h3>Fotos</h3>
-          <div className="grid grid-cols-3 gap-4">
-            <Image
-              src="/acaoSocial.jpg"
-              alt="Ação social 1"
-              width={400}
-              height={400}
-            />
-            <Image
-              src="/acaoSocial.jpg"
-              alt="Ação social 2"
-              width={400}
-              height={400}
-            />
-            <Image
-              src="/acaoSocial.jpg"
-              alt="Ação social 3"
-              width={400}
-              height={400}
-            />
+        <article className="flex flex-col items-center mt-8 border-t border-gray-300 pt-8">
+          <h3 className="text-3xl lg:text-1xl font-bold text-gray-800 mb-4">
+            Fotos
+          </h3>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            {imagesViewer.map((image, index) => (
+              <ImageViewer key={index} src={image.src} alt={image.alt} />
+            ))}
           </div>
         </article>
       </section>
