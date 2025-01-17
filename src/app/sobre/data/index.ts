@@ -3,7 +3,7 @@ type imageViewer = {
   alt: string;
 };
 
-export const imageViewer: imageViewer[] = [
+export const imagesViewer: imageViewer[] = [
   {
     src: '/images/acaoSocial/acaoSocial.jpg',
     alt: 'Ação social 3',
