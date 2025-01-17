@@ -5,23 +5,23 @@ type imageViewer = {
 
 export const imageViewer: imageViewer[] = [
   {
-    src: '/acaoSocial.jpg',
+    src: '/images/acaoSocial/acaoSocial.jpg',
     alt: 'Ação social 3',
   },
   {
-    src: '/acaoSocial.jpg',
+    src: '/images/acaoSocial/acaoSocial.jpg',
     alt: 'Ação social 2',
   },
   {
-    src: '/acaoSocial.jpg',
+    src: '/images/acaoSocial/acaoSocial.jpg',
     alt: 'Ação social 1',
   },
   {
-    src: '/acaoSocial.jpg',
-    alt: 'Ação social 1',
+    src: '/images/acaoSocial/acaoSocial.jpg',
+    alt: 'Ação social 4',
   },
   {
-    src: '/acaoSocial.jpg',
-    alt: 'Ação social 1',
+    src: '/images/acaoSocial/acaoSocial.jpg',
+    alt: 'Ação social 5',
   },
 ];
