@@ -25,9 +25,12 @@ const ImageViewer: React.FC<ImageViewerProps> = ({ src, alt }) => {
         height={400}
         className="object-cover rounded-lg"
       />
-      <div className="absolute inset-0 group-hover:opacity-0 flex items-start justify-end text-white text-sm md:hidden font-semibold transition-opacity duration-300 rounded-lg hover:bg-black/50">
-        <MdOutlineZoomIn className="text-4xl" />
-      </div>
+      <button
+        onClick={toggleModal}
+        className="absolute inset-0 group-hover:opacity-0 flex items-start justify-end text-white text-lg md:hidden font-semibold transition-opacity duration-300 rounded-lg hover:bg-black/50"
+      >
+        <MdOutlineZoomIn />
+      </button>
       <button
         onClick={toggleModal}
         className="absolute hidden inset-0 bg-black/50 opacity-0 group-hover:opacity-100 md:flex items-center justify-center text-white text-sm md:text-4xl font-semibold transition-opacity duration-300 rounded-lg"
