@@ -1,37 +1,46 @@
+'use client';
+import { useState } from 'react';
 import { PiHairDryerFill } from 'react-icons/pi';
 
 const dataButtons = [
   {
+    id: 1,
     title: 'Cabeleireiro',
     icon: <PiHairDryerFill />,
     link: '/cursos/cadastro',
   },
   {
+    id: 2,
     title: 'Cabeleireiro',
     icon: <PiHairDryerFill />,
     link: '/cursos/cadastro',
   },
   {
+    id: 3,
     title: 'Cabeleireiro',
     icon: <PiHairDryerFill />,
     link: '/cursos/cadastro',
   },
   {
+    id: 4,
     title: 'Cabeleireiro',
     icon: <PiHairDryerFill />,
     link: '/cursos/cadastro',
   },
   {
+    id: 5,
     title: 'Cabeleireiro',
     icon: <PiHairDryerFill />,
     link: '/cursos/cadastro',
   },
   {
+    id: 6,
     title: 'Cabeleireiro',
     icon: <PiHairDryerFill />,
     link: '/cursos/cadastro',
   },
   {
+    id: 7,
     title: 'Cabeleireiro',
     icon: <PiHairDryerFill />,
     link: '/cursos/cadastro',
@@ -39,6 +48,7 @@ const dataButtons = [
 ];
 
 export default function Cursos() {
+  const [cursos, setCursos] = useState<string>('');
   return (
     <main className="px-8 md:px-16 lg:px-32 py-8">
       <div className="w-full h-96 bg-lime-700">a</div>
@@ -62,10 +72,10 @@ export default function Cursos() {
             <a
               key={index}
               href={item.link}
-              className="flex items-center justify-center bg-colors-brand-secondary text-colors-brand-primary p-4 rounded-lg mt-4"
+              className="flex items-center justify-center bg-colors-brand-tertiary text-colors-brand-primary p-4 rounded-lg mt-4"
             >
               {item.icon}
-              <p className="ml-2">{item.title}</p>
+              <h3 className="ml-2">{item.title}</h3>
             </a>
           ))}
         </div>
