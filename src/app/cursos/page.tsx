@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import { PiHairDryerFill } from 'react-icons/pi';
+import cursos from './data';
 
 const dataButtons = [
   {
@@ -11,44 +12,47 @@ const dataButtons = [
   },
   {
     id: 2,
-    title: 'Cabeleireiro',
+    title: 'Colorimetria',
     icon: <PiHairDryerFill />,
     link: '/cursos/cadastro',
   },
   {
     id: 3,
-    title: 'Cabeleireiro',
+    title: 'Corte',
     icon: <PiHairDryerFill />,
     link: '/cursos/cadastro',
   },
   {
     id: 4,
-    title: 'Cabeleireiro',
+    title: 'Escova',
     icon: <PiHairDryerFill />,
     link: '/cursos/cadastro',
   },
+];
+
+const dataButtons2 = [
   {
     id: 5,
-    title: 'Cabeleireiro',
+    title: 'Mechas (Avançado)',
     icon: <PiHairDryerFill />,
     link: '/cursos/cadastro',
   },
   {
     id: 6,
-    title: 'Cabeleireiro',
+    title: 'Corte (Avançado)',
     icon: <PiHairDryerFill />,
     link: '/cursos/cadastro',
   },
   {
     id: 7,
-    title: 'Cabeleireiro',
+    title: 'Correção da Cor (Avançado)',
     icon: <PiHairDryerFill />,
     link: '/cursos/cadastro',
   },
 ];
 
 export default function Cursos() {
-  const [cursos, setCursos] = useState<string>('');
+  const [course, setCourse] = useState<number>(1);
   return (
     <main className="px-8 md:px-16 lg:px-32 py-8">
       <div className="w-full h-96 bg-lime-700">a</div>
@@ -69,15 +73,23 @@ export default function Cursos() {
         <h2 className="text-4xl">Cursos</h2>
         <div>
           {dataButtons.map((item, index) => (
-            <a
+            <button
               key={index}
-              href={item.link}
+              onClick={() => setCourse(item.id)}
               className="flex items-center justify-center bg-colors-brand-tertiary text-colors-brand-primary p-4 rounded-lg mt-4"
             >
               {item.icon}
               <h3 className="ml-2">{item.title}</h3>
-            </a>
+            </button>
           ))}
+          {course && (
+            <article>
+              <h3>{cursos[course - 1].title}</h3>
+              <p>{cursos[course - 1].description}</p>
+              <p>Carga horária: {cursos[course - 1].workload}</p>
+              <p>Duração: {cursos[course - 1].duration}</p>
+            </article>
+          )}
         </div>
       </section>
     </main>
