@@ -34,7 +34,7 @@ export default function CoursesPanel({ buttons, data }: CoursesPanelProps) {
       </div>
       {course && (
         <article className="flex flex-col md:grid md:grid-cols-2 items-center mt-8">
-          <div>
+          <div className="w-full h-full flex items-center justify-center">
             <Image
               src={data[course - 1].image}
               alt={data[course - 1].title}
@@ -42,7 +42,7 @@ export default function CoursesPanel({ buttons, data }: CoursesPanelProps) {
               width={200}
             />
           </div>
-          <div>
+          <div className="w-full h-full flex flex-col items-center justify-center">
             <h3>{data[course - 1].title}</h3>
             <p>{data[course - 1].description}</p>
             <p>Carga horária: {data[course - 1].workload}</p>
