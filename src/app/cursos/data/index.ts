@@ -4,6 +4,7 @@ export interface Curso {
   description: string;
   workload: number;
   duration: string;
+  image: string;
 }
 const cursos: Curso[] = [
   {
@@ -13,6 +14,7 @@ const cursos: Curso[] = [
       'Nosso curso completo, onde o aluno faz os módulos: Escova, Colorimetria e Corte. Curso para quem quer ser um profissional completo e atual e pagando menos.',
     workload: 192,
     duration: '12 a 16 meses',
+    image: '/images/courses/escova.jpg',
   },
   {
     id: 2,
@@ -21,6 +23,7 @@ const cursos: Curso[] = [
       'O curso permite com que o aluno seja capaz de entender o desejo da(o) cliente e suas expectativas, sendo capaz de personalizar a cor, cobrir os fios brancos, clarear, escurecer e realizar mechas.',
     workload: 72,
     duration: '6 meses',
+    image: '/images/courses/escova.jpg',
   },
   {
     id: 3,
@@ -29,6 +32,7 @@ const cursos: Curso[] = [
       'O curso permite com que o aluno aprenda divisões, finalizações, ângulos, linhas e colocará em prática todo o conhecimento aprendendo 10 técnicas.',
     workload: 72,
     duration: '6 meses',
+    image: '/images/courses/escova.jpg',
   },
   {
     id: 4,
@@ -37,6 +41,7 @@ const cursos: Curso[] = [
       'Neste curso, o aluno aprenderá diagnosticar a necessidade do fio, técnicas de venda, como realizar um bom atendimento, manuseio do secador de cabelo, tipos de formas, entre outros assuntos.',
     workload: 48,
     duration: '4 meses',
+    image: '/images/courses/escova.jpg',
   },
   //curos de aperfeiçoamento
   {
@@ -46,6 +51,7 @@ const cursos: Curso[] = [
       'O curso é indicado para o profissional que deseja aperfeiçoa-se. Neste curso, o aluno irá aprender como aplicar um descolorante bem próximo à raiz sem manchar, vários tipos de divisão de mechas, hair contour, slices, tonalização, sombreamento e muito mais.',
     workload: 36,
     duration: '3 meses',
+    image: '/images/courses/escova.jpg',
   },
   {
     id: 6,
@@ -53,6 +59,7 @@ const cursos: Curso[] = [
     description: 'Curso para quem deseja aperfeiçoar-se em cortes.',
     workload: 36,
     duration: '3 meses',
+    image: '/images/courses/escova.jpg',
   },
   {
     id: 7,
@@ -60,6 +67,7 @@ const cursos: Curso[] = [
     description: 'Curso para quem deseja aperfeiçoar-se em correção de cor.',
     workload: 36,
     duration: '3 meses',
+    image: '/images/courses/escova.jpg',
   },
 ];
 
