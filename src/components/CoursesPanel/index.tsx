@@ -1,15 +1,8 @@
 'use client';
 
+import { Curso } from '@/app/cursos/data';
 import Image from 'next/image';
 import { useState } from 'react';
-
-type Course = {
-  id: number;
-  title: string;
-  description: string;
-  workload: string;
-  duration: string;
-};
 
 type Button = {
   id: number;
@@ -20,7 +13,7 @@ type Button = {
 
 interface CoursesPanelProps {
   buttons: Button[];
-  data: Course[];
+  data: Curso[];
 }
 
 export default function CoursesPanel({ buttons, data }: CoursesPanelProps) {
