@@ -44,7 +44,7 @@ const dataButtons2 = [
   },
   {
     id: 7,
-    title: 'Correção da Cor (Avançado)',
+    title: 'Correção da Cor',
     icon: <PiHairDryerFill />,
     link: '/cursos/cadastro',
   },
