@@ -56,7 +56,7 @@ const cursos: Curso[] = [
   },
   {
     id: 7,
-    title: 'Correção da Cor (Avançado)',
+    title: 'Correção da Cor',
     description: 'Curso para quem deseja aperfeiçoar-se em correção de cor.',
     workload: 36,
     duration: '3 meses',
