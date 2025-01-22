@@ -1,7 +1,6 @@
-'use client';
-import { useState } from 'react';
 import { PiHairDryerFill } from 'react-icons/pi';
 import cursos from './data';
+import CoursesPanel from '@/components/CoursesPanel';
 
 const dataButtons = [
   {
@@ -52,7 +51,6 @@ const dataButtons2 = [
 ];
 
 export default function Cursos() {
-  const [course, setCourse] = useState<number>(1);
   return (
     <main className="px-8 md:px-16 lg:px-32 py-8">
       <div className="w-full h-96 bg-lime-700">a</div>
@@ -70,27 +68,14 @@ export default function Cursos() {
         </p>
       </section>
       <section className="flex flex-col items-center mt-20 bg-colors-brand-primary text-colors-brand-secondary p-8 md:p-16 shadow-lg rounded-lg text-center">
-        <h2 className="text-4xl">Cursos</h2>
-        <div>
-          {dataButtons.map((item, index) => (
-            <button
-              key={index}
-              onClick={() => setCourse(item.id)}
-              className="flex items-center justify-center bg-colors-brand-tertiary text-colors-brand-primary p-4 rounded-lg mt-4"
-            >
-              {item.icon}
-              <h3 className="ml-2">{item.title}</h3>
-            </button>
-          ))}
-          {course && (
-            <article>
-              <h3>{cursos[course - 1].title}</h3>
-              <p>{cursos[course - 1].description}</p>
-              <p>Carga horária: {cursos[course - 1].workload}</p>
-              <p>Duração: {cursos[course - 1].duration}</p>
-            </article>
-          )}
-        </div>
+        <article className="mb-32 space-y-16">
+          <h2 className="text-4xl">Cursos</h2>
+          <CoursesPanel buttons={dataButtons} data={cursos} />
+        </article>
+        <article className="mb-16 space-y-16">
+          <h2 className="text-4xl">Cursos Especificos (Avançado)</h2>
+          <CoursesPanel buttons={dataButtons2} data={cursos} />
+        </article>
       </section>
     </main>
   );
