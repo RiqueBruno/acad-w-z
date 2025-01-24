@@ -25,7 +25,11 @@ export default function CoursesPanel({ buttons, data }: CoursesPanelProps) {
           <button
             key={index}
             onClick={() => setCourse(item.id)}
-            className="max-h-32 max-w-64 flex flex-col space-y-4 items-center justify-center bg-colors-brand-tertiary text-colors-brand-primary p-4 rounded-lg shadow-none hover:shadow-lg"
+            className={`${
+              item.id === course
+                ? 'bg-colors-brand-tertiary/50 text-colors-brand-secondary'
+                : ''
+            } max-h-32 max-w-64 flex flex-col space-y-4 items-center justify-center bg-colors-brand-tertiary text-colors-brand-primary p-4 rounded-lg shadow-none hover:shadow-lg`}
           >
             {item.icon}
             <h3 className="ml-2">{item.title}</h3>
