@@ -29,7 +29,7 @@ export default function CoursesPanel({ buttons, data }: CoursesPanelProps) {
               item.id === course
                 ? 'bg-colors-brand-tertiary/50 text-colors-brand-secondary'
                 : ''
-            } max-h-32 max-w-64 flex flex-col space-y-4 items-center justify-center bg-colors-brand-tertiary text-colors-brand-primary p-4 rounded-lg shadow-none hover:shadow-lg`}
+            } min-w-64 max-h-32 max-w-64 flex flex-col space-y-4 items-center justify-center bg-colors-brand-tertiary text-colors-brand-primary p-4 rounded-lg shadow-none hover:shadow-lg`}
           >
             {item.icon}
             <h3 className="ml-2">{item.title}</h3>
@@ -37,7 +37,7 @@ export default function CoursesPanel({ buttons, data }: CoursesPanelProps) {
         ))}
       </div>
       {course && (
-        <article className="flex flex-col md:grid md:grid-cols-2 items-center mt-8">
+        <article className="flex flex-col md:grid md:grid-cols-2 items-center mt-8 w-full border-b-2 p-4 rounded-lg shadow-lg h-96">
           <div className="w-full h-full flex items-center justify-center">
             <Image
               src={data[course - 1].image}
@@ -46,8 +46,8 @@ export default function CoursesPanel({ buttons, data }: CoursesPanelProps) {
               width={200}
             />
           </div>
-          <div className="w-full h-full flex flex-col items-center justify-center">
-            <h3>{data[course - 1].title}</h3>
+          <div className="w-full h-full min-w-full flex flex-col items-center justify-center space-y-4">
+            <h3 className="text-2xl">{data[course - 1].title}</h3>
             <p>{data[course - 1].description}</p>
             <p>Carga horária: {data[course - 1].workload}</p>
             <p>Duração: {data[course - 1].duration}</p>
