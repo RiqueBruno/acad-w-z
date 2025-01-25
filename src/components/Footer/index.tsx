@@ -34,7 +34,7 @@ const Footer = () => {
                 Endereço: Rua São Francisco Xavier, 32 - Sala 307 – Tijuca Rio
                 de Janeiro – RJ, 20550-012
               </li>
-              <li>Tel.: (21) 9 9753-1195 / (21) 9 9756-1195</li>
+              <li id="contato">Tel.: (21) 9 9753-1195 / (21) 9 9756-1195</li>
             </ul>
           </div>
           <div className="flex flex-wrap justify-center gap-10 mt-10 lg:mt-0 w-[80%] lg:w-[30%]">
