@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { PiHairDryerFill } from 'react-icons/pi';
 import cursos from './data';
 import CoursesPanel from '@/components/CoursesPanel';
@@ -71,10 +72,22 @@ export default function Cursos() {
         <article className="mb-32 space-y-16">
           <h2 className="text-4xl">Cursos</h2>
           <CoursesPanel buttons={dataButtons} data={cursos} />
+          <Link
+            href="/cursos/cadastro"
+            className="p-4 bg-colors-brand-tertiary text-colors-brand-primary rounded-md hover:bg-colors-brand-tertiary/90 mt-4"
+          >
+            INSCREVA-SE AQUI
+          </Link>
         </article>
         <article className="mb-16 space-y-16">
           <h2 className="text-4xl">Cursos Especificos (Avançado)</h2>
           <CoursesPanel buttons={dataButtons2} data={cursos} />
+          <Link
+            href="/cursos/cadastro"
+            className="p-4 bg-colors-brand-tertiary text-colors-brand-primary rounded-md hover:bg-colors-brand-tertiary/90 mt-4"
+          >
+            INSCREVA-SE AQUI
+          </Link>
         </article>
       </section>
     </main>
