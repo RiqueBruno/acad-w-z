@@ -62,13 +62,19 @@ export default function Header() {
           <h2 id="menu-title" className="sr-only">
             Menu de navegação
           </h2>
-          <ul className="py-2 md:py-0 md:flex md:items-center md:justify-center">
+          <ul className="py-2 md:py-0 md:flex md:items-center md:justify-center scroll-smooth">
             {navNames.map((name) => (
               <NavItem
                 key={name}
                 text={name}
-                url={name === 'Home' ? '/' : `/${name.toLowerCase()}`}
-                cssLink="block px-4 py-2 text-colors-brand-secondary hover:bg-colors-brand-tertiary hover:text-colors-brand-primary transition rounded-md"
+                url={
+                  name === 'Home'
+                    ? '/'
+                    : name === 'Contato'
+                    ? '#contato'
+                    : `/${name.toLowerCase()}`
+                }
+                cssLink="block px-4 py-2 text-colors-brand-secondary hover:bg-colors-brand-tertiary hover:text-colors-brand-primary transition rounded-md scroll-smooth"
                 cssLi=""
               />
             ))}
