@@ -21,8 +21,8 @@ type CarouselComponentProps = {
 };
 
 const layoutOne = (item: CarouselItem) => (
-  <article>
-    <div className="relative w-full h-[600px]">
+  <article className='md:h-full md:w-full'>
+    <div className="relative w-full h-[600px] md:h-full">
       <Image
         src={item.image}
         alt={item.title || item.alt || 'Imagem'}
@@ -31,7 +31,7 @@ const layoutOne = (item: CarouselItem) => (
       />
     </div>
     <div className="absolute inset-0 bg-gradient-to-t from-colors-brand-primary/40 to-transparent">
-      <div className="absolute bottom-0 p-8 text-gray-900">
+      <div className="absolute bottom-0 md:bottom-20 p-8 text-gray-900">
         <h2 className="text-3xl lg:text-4xl font-bold mb-4 bg-white/50 pl-2 rounded-sm">
           {item.title}
         </h2>
@@ -83,12 +83,12 @@ const layoutTwo = (item: CarouselItem) => (
 
 const layoutThree = (item: CarouselItem) => (
   <article className="w-full h-full relative">
-    <div className="absolute inset-0 h-full bg-gradient-to-t lg:bg-none from-colors-brand-tertiary/60 to-transparent overflow-hidden z-20 md:w-[40%]">
-      <div className="absolute p-8 text-gray-700 left-0 bottom-28 md:inset-0 md:space-y-24 md:bg-colors-brand-primary flex flex-col justify-center items-center h-16 md:h-full w-full">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4 z-20 w-[90%] text-center">
+    <div className="absolute inset-0 h-full bg-gradient-to-t lg:bg-none from-colors-brand-tertiary/60 to-transparent overflow-hidden z-20 md:w-[40%] ">
+      <div className="absolute p-8 text-gray-700 left-0 bottom-28 md:inset-0 md:space-y-24 bg-colors-brand-primary/80 flex flex-col justify-center items-center h-[40%] inset-80 md:h-full w-full">
+        <h2 className="text-3xl md:text-4xl font-bold mb-4 z-20 w-[90%] text-center md:bg-none rounded-md">
           {item.title}
         </h2>
-        <p className="text-xl mb-6 w-[90%] md:w-[60%] text-center z-20">
+        <p className="text-xl mb-6 w-[90%] md:w-[60%] text-center z-20 md:bg-none rounded-md">
           {item.subtext}
         </p>
         <Link
