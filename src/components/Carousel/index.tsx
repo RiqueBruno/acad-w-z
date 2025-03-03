@@ -130,7 +130,7 @@ const layoutFour = (item: CarouselItem) => (
       />
     </div>
     <div className="absolute inset-0 bg-gradient-to-t w-full from-colors-brand-primary/40 to-transparent">
-      <div className="absolute bottom-0 p-8 text-gray-900 w-full">
+      <div className="absolute bottom-0 md:bottom-20 p-8 text-gray-900 w-full">
         <h2 className="text-3xl lg:text-4xl font-bold mb-4 bg-white/50 pl-2 rounded-sm w-full text-center p-4">
           {item.title}
         </h2>
