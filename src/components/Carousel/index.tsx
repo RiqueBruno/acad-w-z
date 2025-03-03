@@ -169,7 +169,7 @@ export default function CarouselComponent({
 
   return (
     <section
-      className="relative w-full max-w-6xl mx-auto overflow-hidden rounded-xl shadow-2xl mb-32"
+      className="relative w-full max-w-6xl mx-auto overflow-hidden rounded-xl shadow-2xl mb-32 md:max-h-[32rem]"
       ref={carouselRef}
       tabIndex={0}
       onKeyDown={handleKeyDown}
