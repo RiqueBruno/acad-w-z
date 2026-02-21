@@ -64,7 +64,7 @@ export default function Sobre() {
       <section className="flex flex-col items-center bg-colors-brand-primary text-colors-brand-secondary p-8 md:p-16 shadow-xl rounded-2xl text-center">
         <h2 className="text-3xl lg:text-4xl font-bold mb-4">Ações Sociais</h2>
         <p className="max-w-3xl mb-12 italic">
-          "Acreditamos que a beleza é para todos." Realizamos cortes gratuitos e
+          Acreditamos que a beleza é para todos. Realizamos cortes gratuitos e
           parcerias com organizações para transformar vidas através da
           autoestima.
         </p>
