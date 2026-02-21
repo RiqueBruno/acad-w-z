@@ -4,8 +4,7 @@
 
 ## 🚧 Status do Projeto
 
-⚠️ **Este projeto está atualmente em desenvolvimento ativo.**
-Estou migrando e refatorando a aplicação para tecnologias mais robustas (Next.js), por isso algumas seções podem passar por alterações visuais constantes.
+Concluído!
 
 ## Demonstração
 
@@ -55,3 +54,4 @@ yarn install
 npm run dev
 # ou
 yarn dev
+```
