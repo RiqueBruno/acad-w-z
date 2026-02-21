@@ -1,9 +1,9 @@
-'use client';
-import { useState, useEffect, useRef } from 'react';
-import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
-import Image from 'next/image';
-import waves from '../../../public/waves.png';
-import Link from 'next/link';
+"use client";
+import { useState, useEffect, useRef } from "react";
+import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
+import Image from "next/image";
+import waves from "../../../public/waves.png";
+import Link from "next/link";
 
 export type CarouselItem = {
   image: string;
@@ -21,11 +21,11 @@ type CarouselComponentProps = {
 };
 
 const layoutOne = (item: CarouselItem) => (
-  <article className='md:h-full md:w-full'>
+  <article className="md:h-full md:w-full">
     <div className="relative w-full h-[600px] md:h-full">
       <Image
         src={item.image}
-        alt={item.title || item.alt || 'Imagem'}
+        alt={item.title || item.alt || "Imagem"}
         fill
         className="object-cover"
       />
@@ -39,7 +39,7 @@ const layoutOne = (item: CarouselItem) => (
           {item.subtext}
         </p>
         <Link
-          href={item.link ? `/${item.link}` : '/'}
+          href={item.link ? `/${item.link}` : "/"}
           className="px-6 py-3 bg-colors-brand-tertiary text-colors-brand-primary rounded-full hover:bg-opacity-90 transition"
         >
           {item.buttonText}
@@ -54,7 +54,7 @@ const layoutTwo = (item: CarouselItem) => (
     <div className="relative w-full md:w-[64%] h-[440px] md:h-[600px] z-0">
       <Image
         src={item.image}
-        alt={item.title || item.alt || 'Imagem'}
+        alt={item.title || item.alt || "Imagem"}
         fill
         className="object-cover z-0"
       />
@@ -68,7 +68,7 @@ const layoutTwo = (item: CarouselItem) => (
           {item.subtext}
         </p>
         <Link
-          href={item.link ? `/${item.link}` : '/'}
+          href={item.link ? `/${item.link}` : "/"}
           className="px-6 py-3 bg-colors-brand-tertiary text-colors-brand-primary rounded-full hover:bg-opacity-90 transition z-20"
         >
           {item.buttonText}
@@ -92,7 +92,7 @@ const layoutThree = (item: CarouselItem) => (
           {item.subtext}
         </p>
         <Link
-          href={item.link ? `/${item.link}` : '/'}
+          href={item.link ? `/${item.link}` : "/"}
           className="px-6 py-3 bg-colors-brand-tertiary text-colors-brand-primary rounded-full hover:bg-opacity-90 transition z-20"
         >
           {item.buttonText}
@@ -111,7 +111,7 @@ const layoutThree = (item: CarouselItem) => (
     <div className="relative w-full md:w-[64%] h-[600px] ml-auto z-0">
       <Image
         src={item.image}
-        alt={item.title || item.alt || 'Imagem'}
+        alt={item.title || item.alt || "Imagem"}
         fill
         className="object-cover"
       />
@@ -124,7 +124,7 @@ const layoutFour = (item: CarouselItem) => (
     <div className="relative w-full h-[600px]">
       <Image
         src={item.image}
-        alt={item.title || item.alt || 'Imagem'}
+        alt={item.title || item.alt || "Imagem"}
         fill
         className="object-cover"
       />
@@ -152,19 +152,19 @@ export default function CarouselComponent({
       setCurrentIndex((prev) => (prev + 1) % carouselItems.length);
     }, 5000);
     return () => clearInterval(interval);
-  }, [autoplayPaused]);
+  }, [autoplayPaused, carouselItems.length]);
 
   const handlePrev = () =>
     setCurrentIndex((prev) =>
-      prev === 0 ? carouselItems.length - 1 : prev - 1
+      prev === 0 ? carouselItems.length - 1 : prev - 1,
     );
 
   const handleNext = () =>
     setCurrentIndex((prev) => (prev + 1) % carouselItems.length);
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
-    if (e.key === 'ArrowLeft') handlePrev();
-    if (e.key === 'ArrowRight') handleNext();
+    if (e.key === "ArrowLeft") handlePrev();
+    if (e.key === "ArrowRight") handleNext();
   };
 
   return (
@@ -176,17 +176,17 @@ export default function CarouselComponent({
       onMouseEnter={() => setAutoplayPaused(true)}
       onMouseLeave={() => setAutoplayPaused(false)}
       role="region"
-      aria-label={`Destaques: ${type || 'cursos, ações sociais e promoções'}`}
+      aria-label={`Destaques: ${type || "cursos, ações sociais e promoções"}`}
       aria-labelledby="carousel-title"
       aria-live="polite"
     >
       <h2 id="carousel-title" className="sr-only">
-        {`Destaques: ${type || 'cursos, ações sociais e promoções'}`}
+        {`Destaques: ${type || "cursos, ações sociais e promoções"}`}
       </h2>
       <div
         className="flex transition-transform duration-500"
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-        aria-label={`Destaques: ${type || 'cursos, ações sociais e promoções'}`}
+        aria-label={`Destaques: ${type || "cursos, ações sociais e promoções"}`}
       >
         {carouselItems.map((item, index) => (
           <div
@@ -238,11 +238,11 @@ export default function CarouselComponent({
             onClick={() => setCurrentIndex(index)}
             className={`w-3 h-3 rounded-full transition-all ${
               currentIndex === index
-                ? 'bg-colors-brand-tertiary scale-125 border-2 border-x-colors-brand-primary'
-                : 'bg-colors-brand-tertiary/50 hover:bg-colors-brand-tertiary/75 hover:border-2 border-x-colors-brand-primary'
+                ? "bg-colors-brand-tertiary scale-125 border-2 border-x-colors-brand-primary"
+                : "bg-colors-brand-tertiary/50 hover:bg-colors-brand-tertiary/75 hover:border-2 border-x-colors-brand-primary"
             }`}
             aria-label={`Ir para o slide ${index + 1}`}
-            aria-current={currentIndex === index ? 'true' : undefined}
+            aria-current={currentIndex === index ? "true" : undefined}
           />
         ))}
       </div>
