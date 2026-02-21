@@ -83,7 +83,7 @@ export default function Cursos() {
 
           <Link
             href="/cursos/cadastro"
-            className="mt-12 px-10 py-5 border-2 border-colors-brand-primary text-colors-brand-primary font-black rounded-full transition-all hover:bg-colors-brand-primary hover:text-white text-lg"
+            className="mt-12 px-10 py-5 border-2 border-colors-brand-tertiary text-colors-brand-tertiary font-black rounded-full transition-all hover:bg-colors-brand-primary hover:text-white text-lg"
           >
             QUERO ME APERFEIÇOAR
           </Link>
