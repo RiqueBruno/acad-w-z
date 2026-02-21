@@ -1,10 +1,11 @@
-import Link from 'next/link';
+import Link from "next/link";
 
 type NavItemProps = {
   text: string;
   url: string;
   cssLi: string;
   cssLink: string;
+  onClick?: () => void;
 };
 
 export default function NavItem({ text, url, cssLi, cssLink }: NavItemProps) {

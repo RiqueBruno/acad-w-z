@@ -1,34 +1,42 @@
-'use client';
-import React, { useState } from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
-import NavItem from '../NavItem';
+"use client";
+import React, { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import NavItem from "../NavItem";
+
+const navLinks = [
+  { label: "Home", href: "/" },
+  { label: "Sobre", href: "/sobre" },
+  { label: "Cursos", href: "/cursos" },
+  { label: "Serviços", href: "/servicos" },
+  { label: "Contato", href: "#contato" },
+];
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const navNames = ['Home', 'Sobre', 'Cursos', 'Serviços', 'Contato'];
 
   return (
-    <header className="bg-colors-brand-primary shadow-md z-[99] fixed w-full">
-      <div className="container mx-auto flex justify-between items-center py-4 px-6">
+    <header className="bg-colors-brand-primary shadow-md z-[999] fixed top-0 w-full h-24 flex items-center">
+      <div className="container mx-auto flex justify-between items-center px-6">
         <Link href="/">
           <Image
             src="/logo.webp"
             alt="Logo Academia Waleska Zanyor"
-            width={200}
-            height={200}
-            className="cursor-pointer"
+            width={180}
+            height={60}
+            className="cursor-pointer object-contain"
+            priority
           />
         </Link>
 
         <button
           onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className="block md:hidden p-2 text-gray-800 focus:outline-none"
-          aria-label="Toggle menu"
+          className="block md:hidden p-2 text-colors-brand-secondary focus:outline-none"
+          aria-label={isMenuOpen ? "Fechar menu" : "Abrir menu"}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="w-6 h-6"
+            className="w-8 h-8"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -54,28 +62,19 @@ export default function Header() {
         <nav
           className={`${
             isMenuOpen
-              ? 'absolute top-16 right-6 bg-colors-brand-primary w-48 rounded-md shadow-md transition-all duration-300'
-              : 'hidden md:block'
-          } md:space-x-6 md:flex md:flex-row md:items-center md:justify-end`}
-          aria-labelledby="menu-title"
+              ? "absolute top-20 right-6 bg-colors-brand-primary w-56 rounded-xl shadow-2xl border border-white/10 transition-all duration-300"
+              : "hidden md:block"
+          } md:static md:w-auto md:bg-transparent md:shadow-none md:border-none`}
         >
-          <h2 id="menu-title" className="sr-only">
-            Menu de navegação
-          </h2>
-          <ul className="py-2 md:py-0 md:flex md:items-center md:justify-center scroll-smooth">
-            {navNames.map((name) => (
+          <ul className="flex flex-col md:flex-row py-4 md:py-0 md:space-x-2 lg:space-x-4">
+            {navLinks.map((link) => (
               <NavItem
-                key={name}
-                text={name}
-                url={
-                  name === 'Home'
-                    ? '/'
-                    : name === 'Contato'
-                    ? '#contato'
-                    : `/${name.toLowerCase()}`
-                }
-                cssLink="block px-4 py-2 text-colors-brand-secondary hover:bg-colors-brand-tertiary hover:text-colors-brand-primary transition rounded-md scroll-smooth"
+                key={link.href}
+                text={link.label}
+                url={link.href}
                 cssLi=""
+                cssLink="block px-5 py-3 md:py-2 text-colors-brand-secondary hover:bg-colors-brand-tertiary hover:text-colors-brand-primary font-medium transition-all rounded-lg"
+                onClick={() => setIsMenuOpen(false)}
               />
             ))}
           </ul>
