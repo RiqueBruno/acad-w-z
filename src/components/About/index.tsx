@@ -1,15 +1,18 @@
-import Link from 'next/link';
-import aboutInfos from './data';
+import Link from "next/link";
+import Image from "next/image";
+import aboutInfos from "./data";
 
 export default function About() {
   return (
     <section className="bg-custom-bg bg-cover bg-center py-8 min-h-screen w-full flex items-center justify-center px-8 md:px-8 lg:px-16">
       <div className="h-auto max-w-[1200px] w-full bg-white/80 shadow-xl rounded-lg flex flex-col md:flex-row items-center overflow-hidden">
-        <div className="w-full md:w-[50%] h-[300px] md:h-[400px] flex items-center justify-center p-4 md:p-6">
-          <img
+        <div className="w-full md:w-[50%] h-[300px] md:h-[500px] relative p-4 md:p-6">
+          <Image
             src={aboutInfos.image}
             alt={aboutInfos.title}
-            className="w-full h-full object-contain rounded-lg"
+            fill
+            className="object-contain rounded-lg p-4"
+            sizes="(max-width: 768px) 100vw, 50vw"
           />
         </div>
 
@@ -24,7 +27,7 @@ export default function About() {
           </header>
           <Link
             href="/sobre"
-            className="p-4 bg-colors-brand-tertiary text-colors-brand-primary rounded-md hover:bg-colors-brand-tertiary/90 mt-4"
+            className="p-4 bg-colors-brand-tertiary text-colors-brand-primary rounded-md transition-all hover:scale-105 hover:bg-colors-brand-tertiary/90 mt-6 font-bold"
           >
             {aboutInfos.button}
           </Link>
