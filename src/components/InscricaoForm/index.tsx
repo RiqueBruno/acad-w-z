@@ -21,13 +21,22 @@ export default function InscricaoForm() {
   ];
   const diasSemana = ["Segunda", "Terça", "Quarta", "Quinta", "Sábado"];
 
-  const handleCheckbox = (item: string, state: string[], setState: any) => {
-    state.includes(item)
-      ? setState(state.filter((i) => i !== item))
-      : setState([...state, item]);
+  // Corrigido: Tipagem do setState para evitar o erro 'any'
+  const handleCheckbox = (
+    item: string,
+    state: string[],
+    setState: React.Dispatch<React.SetStateAction<string[]>>,
+  ) => {
+    // Corrigido: Uso de if/else para evitar erro de expressão não utilizada
+    if (state.includes(item)) {
+      setState(state.filter((i) => i !== item));
+    } else {
+      setState([...state, item]);
+    }
   };
 
-  const handleSend = (e: React.MouseEvent) => {
+  // Corrigido: Removido o parâmetro 'e' que causava erro de variável não utilizada
+  const handleSend = () => {
     setIsSent(true);
     setTimeout(() => {
       window.open(generateLink(), "_blank");
@@ -89,7 +98,7 @@ export default function InscricaoForm() {
               }
               className={`p-4 rounded-xl text-sm font-bold border-2 transition-all duration-300 ${
                 selectedCursos.includes(curso)
-                  ? "border-colors-brand-tertiary bg-colors-brand-primary text-gray-800 shadow-md scale-[1.02]"
+                  ? "border-colors-brand-primary bg-colors-brand-primary text-white shadow-md scale-[1.02]"
                   : "border-gray-100 bg-white text-gray-500 hover:border-colors-brand-tertiary"
               }`}
             >
@@ -111,7 +120,7 @@ export default function InscricaoForm() {
               onClick={() => handleCheckbox(dia, dias, setDias)}
               className={`px-4 py-2 rounded-full text-xs font-black border-2 transition-all ${
                 dias.includes(dia)
-                  ? "border-gray-500 bg-colors-brand-tertiary text-white"
+                  ? "border-colors-brand-tertiary bg-colors-brand-tertiary text-colors-brand-primary"
                   : "border-gray-100 bg-gray-50 text-gray-400"
               }`}
             >
