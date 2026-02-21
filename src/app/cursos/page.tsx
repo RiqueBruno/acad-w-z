@@ -1,92 +1,68 @@
-import Link from 'next/link';
-import { PiHairDryerFill } from 'react-icons/pi';
-import cursos from './data';
-import CoursesPanel from '@/components/CoursesPanel';
+// src/app/cursos/page.tsx
+import { Metadata } from "next";
+import Link from "next/link";
+import { PiHairDryerFill } from "react-icons/pi";
+import cursos from "./data";
+import CoursesPanel from "@/components/CoursesPanel";
 
-const dataButtons = [
-  {
-    id: 1,
-    title: 'Cabeleireiro',
-    icon: <PiHairDryerFill />,
-    link: '/cursos/cadastro',
-  },
-  {
-    id: 2,
-    title: 'Colorimetria',
-    icon: <PiHairDryerFill />,
-    link: '/cursos/cadastro',
-  },
-  {
-    id: 3,
-    title: 'Corte',
-    icon: <PiHairDryerFill />,
-    link: '/cursos/cadastro',
-  },
-  {
-    id: 4,
-    title: 'Escova',
-    icon: <PiHairDryerFill />,
-    link: '/cursos/cadastro',
-  },
-];
-
-const dataButtons2 = [
-  {
-    id: 5,
-    title: 'Mechas (Avançado)',
-    icon: <PiHairDryerFill />,
-    link: '/cursos/cadastro',
-  },
-  {
-    id: 6,
-    title: 'Corte (Avançado)',
-    icon: <PiHairDryerFill />,
-    link: '/cursos/cadastro',
-  },
-  {
-    id: 7,
-    title: 'Correção da Cor',
-    icon: <PiHairDryerFill />,
-    link: '/cursos/cadastro',
-  },
-];
+export const metadata: Metadata = {
+  title: "Cursos Profissionais | Academia Waleska Zanyor",
+  description:
+    "Torne-se um profissional completo com nossos cursos de Cabeleireiro, Colorimetria, Corte e Mechas avançadas.",
+};
 
 export default function Cursos() {
+  const formatButtons = (items: typeof cursos) =>
+    items.map((curso) => ({
+      id: curso.id,
+      title: curso.title,
+      icon: <PiHairDryerFill aria-hidden="true" />,
+      link: "/cursos/cadastro",
+    }));
+
+  const dataButtons = formatButtons(cursos.filter((c) => c.id <= 4));
+  const dataButtons2 = formatButtons(cursos.filter((c) => c.id > 4));
+
   return (
-    <main className="px-8 md:px-16 lg:px-32 py-8">
-      <div className="w-full h-96 bg-lime-700">a</div>
-      <section className="flex flex-col items-center mt-20 bg-colors-brand-primary text-colors-brand-secondary p-8 md:p-16 shadow-lg rounded-lg text-center">
-        <h2 className="text-4xl">Sobre nossos Cursos</h2>
-        <p>
-          A Academia Waleska Zanyor oferece cursos de formação única no mercado
-          de coiffure, preparando para o mercado profissionais completos,
-          treinados nas diversas funções dentro de um salão: Escova, Coloração,
-          Corte, Tratamento, Mechas, dentre outros. Contamos com uma estrutura
-          de ponta! com salas Elegantes e funcionais com bancadas, lavatórios e
-          tratamento criada para que o aluno possa fazer seu treinamento,
-          atendendo diretamente o público externo, com a supervisão de
-          instrutores.
+    <main className="container mx-auto px-4 md:px-8 py-12">
+      <div className="w-full h-64 md:h-96 bg-lime-700 rounded-2xl flex items-center justify-center text-white text-2xl font-bold shadow-inner">
+        Banner Academia Waleska Zanyor
+      </div>
+
+      <section className="mt-16 bg-colors-brand-primary text-colors-brand-secondary p-8 md:p-16 shadow-xl rounded-2xl">
+        <h1 className="text-4xl md:text-5xl font-bold mb-6 text-center">
+          Sobre nossos Cursos
+        </h1>
+        <p className="max-w-3xl mx-auto text-lg leading-relaxed text-center opacity-90">
+          A Academia Waleska Zanyor oferece formação única no mercado de
+          coiffure. Contamos com estrutura de ponta, salas elegantes e
+          funcionais para que o aluno aprenda na prática, atendendo o público
+          externo sob supervisão técnica.
         </p>
       </section>
-      <section className="flex flex-col items-center mt-20 bg-colors-brand-primary text-colors-brand-secondary p-8 md:p-16 shadow-lg rounded-lg text-center">
-        <article className="mb-32 space-y-16">
-          <h2 className="text-4xl">Cursos</h2>
+
+      <section className="mt-20 space-y-24">
+        <article className="flex flex-col items-center">
+          <h2 className="text-3xl font-semibold mb-12">Formação Fundamental</h2>
           <CoursesPanel buttons={dataButtons} data={cursos} />
           <Link
             href="/cursos/cadastro"
-            className="p-4 bg-colors-brand-tertiary text-colors-brand-primary rounded-md hover:bg-colors-brand-tertiary/90 mt-4"
+            className="mt-10 px-8 py-4 bg-colors-brand-tertiary text-colors-brand-primary font-bold rounded-full transition-all hover:scale-105 hover:shadow-lg active:scale-95"
           >
-            INSCREVA-SE AQUI
+            INSCREVA-SE AGORA
           </Link>
         </article>
-        <article className="mb-16 space-y-16">
-          <h2 className="text-4xl">Cursos Especificos (Avançado)</h2>
+
+        <article className="flex flex-col items-center">
+          <h2 className="text-3xl font-semibold mb-12">
+            Especializações (Avançado)
+          </h2>
           <CoursesPanel buttons={dataButtons2} data={cursos} />
           <Link
             href="/cursos/cadastro"
-            className="p-4 bg-colors-brand-tertiary text-colors-brand-primary rounded-md hover:bg-colors-brand-tertiary/90 mt-4"
+            className="mt-10 px-8 py-4 border-2 border-colors-brand-tertiary text-colors-brand-tertiary font-bold rounded-full transition-all hover:bg-colors-brand-tertiary hover:text-colors-brand-primary"
           >
-            INSCREVA-SE AQUI
+            QUERO ME APERFEIÇOAR
           </Link>
         </article>
       </section>
