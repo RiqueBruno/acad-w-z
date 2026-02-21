@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import Image from 'next/image';
-import { useRef } from 'react';
-import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
+import Image from "next/image";
+import { useRef } from "react";
+import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
 type Course = {
   id: number;
@@ -21,7 +21,7 @@ export default function CoursesCarousel({ courses }: CoursesCarouselProps) {
     if (carouselRef.current) {
       carouselRef.current.scrollBy({
         left: -carouselRef.current.offsetWidth,
-        behavior: 'smooth',
+        behavior: "smooth",
       });
     }
   };
@@ -30,7 +30,7 @@ export default function CoursesCarousel({ courses }: CoursesCarouselProps) {
     if (carouselRef.current) {
       carouselRef.current.scrollBy({
         left: carouselRef.current.offsetWidth,
-        behavior: 'smooth',
+        behavior: "smooth",
       });
     }
   };
@@ -62,7 +62,7 @@ export default function CoursesCarousel({ courses }: CoursesCarouselProps) {
                 {course.name}
               </h3>
               <a
-                href={`/cursos/${course.id}`}
+                href={"/cursos/cadastro"}
                 className="inline-block bg-10 text-60 px-6 py-2 rounded-md text-base font-medium hover:bg-opacity-90 transition bg-colors-brand-tertiary text-colors-brand-primary"
               >
                 Inscrever-se
