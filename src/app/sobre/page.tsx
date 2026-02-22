@@ -81,7 +81,10 @@ export default function Sobre() {
         </div>
       </section>
 
-      <section className="bg-colors-brand-primary text-colors-brand-secondary p-8 md:p-16 shadow-2xl rounded-[2rem] text-center">
+      <section
+        id="acaosocial"
+        className="bg-colors-brand-primary text-colors-brand-secondary p-8 md:p-16 shadow-2xl rounded-[2rem] text-center"
+      >
         <h2 className="text-3xl lg:text-5xl font-black mb-6 uppercase">
           Ações Sociais
         </h2>
