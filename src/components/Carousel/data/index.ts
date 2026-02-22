@@ -1,30 +1,30 @@
-import { CarouselItem } from '..';
+import { CarouselItem } from "..";
 
 const carouselData: CarouselItem[] = [
   {
-    image: '/acaoSocial.jpg',
-    title: 'Curso de Cabeleireiro',
-    subtext: 'Aprenda a cortar cabelos e a fazer penteados incríveis.',
-    buttonText: 'Inscreva-se',
+    image: "/cabeleireiro.png",
+    title: "Curso de Cabeleireiro",
+    subtext: "Aprenda a cortar cabelos e a fazer penteados incríveis.",
+    buttonText: "Inscreva-se",
     layout: 3,
-    link: 'sobre',
+    link: "cursos",
   },
   {
-    image: '/acaoSocial.jpg',
-    title: 'Ação social - Obra do Berço - 2024',
+    image: "/acaoSocial.jpg",
+    title: "Ação social - Obra do Berço",
     subtext:
-      'Ação social realizada na instituição Obra do Berço, localizada em Rio de Janeiro.',
-    buttonText: 'Leia mais',
+      "Ação social realizada na instituição Obra do Berço, localizada em Rio de Janeiro.",
+    buttonText: "Leia mais",
     layout: 1,
-    link: 'sobre',
+    link: "sobre#acaosocial",
   },
   {
-    image: '/acaoSocial.jpg',
-    title: 'Seja Modelo',
-    subtext: 'Torne-se um modelo e torne seus desejos realidade.',
-    buttonText: 'Ser Modelo',
+    image: "/images/turmas/07.jpg",
+    title: "Seja Modelo",
+    subtext: "Torne-se um modelo e torne seus desejos realidade.",
+    buttonText: "Ser Modelo",
     layout: 2,
-    link: 'sobre',
+    link: "servicos",
   },
 ];
 
