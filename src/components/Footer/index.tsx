@@ -1,7 +1,7 @@
-import Link from 'next/link';
-import React from 'react';
-import { FaFacebookF, FaInstagram } from 'react-icons/fa';
-import { data } from './data';
+import Link from "next/link";
+import React from "react";
+import { FaFacebookF, FaInstagram } from "react-icons/fa";
+import { data } from "./data";
 
 const Footer = () => {
   return (
@@ -12,7 +12,7 @@ const Footer = () => {
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3674.790274257071!2d-43.222022300000006!3d-22.9211052!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x997f64dff2bce5%3A0x9d5e8ccf9db25812!2sAcademia%20Waleska%20Zanyor%20Cursos%20de%20Cabeleireiro%2C%20Corte%2C%20Colora%C3%A7%C3%A3o%20e%20outros.!5e0!3m2!1spt-BR!2sbr!4v1733068576599!5m2!1spt-BR!2sbr"
           width="auto"
           height="auto"
-          style={{ border: 4, width: '100%', height: '100%', borderRadius: 10 }}
+          style={{ border: 4, width: "100%", height: "100%", borderRadius: 10 }}
           allowFullScreen
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
@@ -66,7 +66,9 @@ const Footer = () => {
       {/* Redes Sociais */}
       <div className="bg-colors-brand-tertiary text-colors-brand-primary p-5 text-center md:flex justify-between items-center md:px-32">
         <div className="mb-4 md:mb-0 w-full md:w-1/2 md:text-start">
-          <h2 className="font-bold">Feito por Bruno Henrique Cardoso - 2025</h2>
+          <h2 className="font-bold">
+            © 2026 Academia Waleska Zanyor. Todos os direitos reservados.
+          </h2>
         </div>
         <div className="flex justify-center space-x-4">
           <Link
